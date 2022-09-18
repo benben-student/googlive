@@ -19,8 +19,11 @@ React + ReactHook + ReactRouter + Redux + Axios + Less + 第三方
 
  ## Less支持的配置
  在React脚手架构建的环境中，默认支持的是CSS和Sass/Scss，所以需要自己配置Less
- 1.执行命令： npm run eject(创建完成后直接执行此命令),如果修改了文件。打开了文件根目录，显示隐藏文件，删除 .git文件夹，再次执行命令
- 2.安装依赖npm install --save-dev less less-loader
+ 
+ 1.执行命令： 
+ npm run eject(创建完成后直接执行此命令),如果修改了文件。打开了文件根目录，显示隐藏文件，删除 .git文件夹，再次执行命令
+ 2.安装依赖
+ npm install --save-dev less less-loader
  3.修改配置文件
  配置1，
  const lessRegex=/\.less$/;
