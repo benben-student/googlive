@@ -32,3 +32,8 @@ React + ReactHook + ReactRouter + Redux + Axios + Less + 第三方
 1.安装依赖
 npm install --save axios
 2.配置相关文件
+
+
+## 配置初始化样式
+ 1.初始化css文件
+ 2.引入字体图标库：iconfont
