@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+## GoodLive
+## 技术栈
+React + ReactHook + ReactRouter + Redux + Axios + Less + 第三方
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+计划完成功能
+首页展示
+城市管理
+搜索功能
+上拉加载
+详情页
+收藏功能
+订单评价
+初始化环境构建
+项目环境：create-react-app 脚手架构建项目环境
+支持Less语法
+集成网络请求Axios
+Less支持的配置
+在React脚手架构架的环境中，默认支持的是CSS和Sass/Scss。所以需要自己配置Less
 
-## Available Scripts
+执行命令：npm run eject (创建完项目不要做任何操作，直接执行次命令),如果我们修改了文件，打开文件根目录，显示隐藏文件，删除.git文件夹,再次执行命令
+安装依赖
+npm install --save-dev less less-loader
+修改配置文件
+// 配置1
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 
-In the project directory, you can run:
+// 配置2
+{
+    test: lessRegex,
+    exclude: lessModuleRegex,
+    use: getStyleLoaders(
+    {
+        importLoaders: 3,
+        sourceMap: isEnvProduction
+        ? shouldUseSourceMap
+        : isEnvDevelopment,
+    },
+    'less-loader'
+    ),
+    sideEffects: true,
+},
+{
+    test: lessModuleRegex,
+    use: getStyleLoaders(
+    {
+        importLoaders: 3,
+        sourceMap: isEnvProduction
+        ? shouldUseSourceMap
+        : isEnvDevelopment,
+        modules: {
+        getLocalIdent: getCSSModuleLocalIdent,
+        },
+    },
+    'less-loader'
+    ),
+},
+配置网络请求
+安装依赖
+npm install --save axios
+配置相关文件
+配置初始化样式
+初始化css文件
+引入字体图标库:iconfont
+实现首页展示
+创建页面:Home/Shop/LifeService/User
 
-### `npm start`
+创建路由
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+安装依赖：npm install --save react-router-dom
+配置AppRouter文件
+底部导航
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+iconfont
 
-### `npm test`
+顶部导航
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+REM配置 -> public/index.html加入REM的计算方案
+焦点轮播图
 
-### `npm run build`
+参考文档：https://react-swipeable-views.com/
+安装依赖：
+npm install --save react-swipeable-views
+npm install --save react-swipeable-views-utils
+指示器需要独立实现
+npm install --save classnames
+搭建服务器环境提供数据
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+安装依赖
+npm install --save experss
+npm install --save cors
+跨域使用cors后台解决
+数据来源于json文件
+首页列表数据展示
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+组件分类:
+智能组件(HomeHotList)：处理数据，获取数据，过滤数据
+木偶组件(HomeHotView)：视图适配
+ReactHook useEffect业务分离
