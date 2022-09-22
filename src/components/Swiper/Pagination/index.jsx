@@ -1,21 +1,22 @@
 import React from "react"
-import classnames from "classnames"
+import classNames from "classnames"
 import "./style.less"
 
-const Pagination = (props) =>{
+const Pagination = (props) => {
     let arr = new Array(props.len).fill(1)
     let currentIndex = props.currentIndex
-    return(
-        <div className="swiper-pagination">
+    return (
+        <div className="swiper-pagination ">
             <ul>
                 {
-                    arr.map((ele,index) =>{
-                        return <li className={ classnames({'selected':currentIndex === index})} key={index}></li>
+                    arr.map((ele, index) => {
+                        return <li className={classNames({ "selected": currentIndex === index })} key={index}></li>
                     })
                 }
             </ul>
         </div>
     )
 }
+
 
 export default Pagination
