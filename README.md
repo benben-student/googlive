@@ -108,3 +108,17 @@ npm install --save axios
         - 智能组件(HomeHotList)：处理数据，获取数据，过滤数据
         - 木偶组件(HomeHotView)：视图适配
     - ReactHook useEffect业务分离
+
+    ## 实现城市化管理
+    1. 创建城市管理页面实现路由跳转：City
+    2. 实现路由嵌套，将共享底部导航的页面做成二级路由:Layout布局
+    3. 城市页面组件效果实现 PubHeader,Current,cityList
+    4. 集成Redux：通过它来存储城市页面，根据城市不同，UI会渲染不同的结果 
+    -Store Reducers Actions
+    -安装依赖
+    ```js
+    npm install --save redux
+    npm install --save react-redux
+    npm install --save-dev redux-devtools-extension
+    ```
+    -创建Redux流程
