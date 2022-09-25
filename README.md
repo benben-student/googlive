@@ -122,3 +122,4 @@ npm install --save axios
     npm install --save-dev redux-devtools-extension
     ```
     -创建Redux流程
+    5. 关联Redux，存储城市数据

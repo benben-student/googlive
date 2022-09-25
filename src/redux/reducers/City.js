@@ -4,17 +4,19 @@ const defaultState = {
     cityName: "北京"
 }
 
-const City = (state = defaultState, action) => {
+const city = (state = defaultState, action) => {
     switch (action.type) {
         case INIT_CITY:
             return {
                 cityName: action.cityName
             }
         case CHENAGE_CITY:
-            return
+            return {
+                cityName:action.cityName
+            }
         default:
             return state
     }
 }
 
-export default City
+export default city

@@ -2,19 +2,25 @@ import React, { useState } from "react";
 import CityHeader from '../../components/PubHeader'
 import CurrentCity from "./CurrentCity";
 import CityList from "./CityList";
+import { useSelector, useDispatch } from 'react-redux'
+import { changeCity, initCity } from '../../redux/actions/city'
 
 const City = () => {
 
-    const [city, setCity] = useState("北京")
+    // const [city, setCity] = useState("北京")
+    const dispatch = useDispatch()
+    const city = useSelector(state => state.city)
+
+
 
     function onCityEvent(city) {
-        setCity(city)
+        dispatch(changeCity(city))
     }
 
     return (
         <div>
             <CityHeader title={"城市选择"} />
-            <CurrentCity city={city} />
+            <CurrentCity city={city.cityName} />
             <CityList onEvent={onCityEvent} />
         </div>
     )
